@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     // i have uses z-50 for fixed position navbar
-    <nav className="fixed top-0 z-50 w-full  bg-gray-200 shadow">
+    <nav className="sticky top-0 z-50 w-full  bg-gray-200 shadow">
       <div className=" flex lg:flex-row-reverse justify-between items-center  px-3  w-full">
         <div>
           <ul className="hidden lg:flex gap-x-9 items-center">
