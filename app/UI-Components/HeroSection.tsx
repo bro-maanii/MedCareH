@@ -9,7 +9,7 @@ export default function HeroSection() {
     <div className="relative w-full h-[400px] sm:h-[600px] ">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute bg-fixed inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${bg.src})` }}
       ></div>
 
