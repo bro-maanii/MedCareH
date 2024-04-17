@@ -61,7 +61,7 @@ export default function Pricing() {
                   </svg>
                 </Button>
                 <p className="text-xs text-gray-500 mt-3">
-                  Literally you probably haven't heard of them jean shorts.
+                  Literally you probably havent heard of them jean shorts.
                 </p>
               </div>
             </div>
@@ -121,7 +121,7 @@ export default function Pricing() {
                   </svg>
                 </Button>
                 <p className="text-xs text-gray-500 mt-3">
-                  Literally you probably haven't heard of them jean shorts.
+                  Literally you probably havent heard of them jean shorts.
                 </p>
               </div>
             </div>
@@ -148,7 +148,7 @@ export default function Pricing() {
                 </p>
                 <p className="flex items-center text-gray-600 mb-2">
                     <CheckCircle className="w-4 h-5 text-blue-600 mb-1 mr-2 inline-flex items-center justify-center flex-shrink-0" />
-                  Lorem, ipsum dolor.
+                  Lorem ipsum dolor.
                 </p>
                 <p className="flex items-center text-gray-600 mb-2">
                 <CheckCircle className="w-4 h-5 text-blue-600 mb-1 mr-2 inline-flex items-center justify-center flex-shrink-0" />
@@ -174,7 +174,7 @@ export default function Pricing() {
                   </svg>
                 </Button>
                 <p className="text-xs text-gray-500 mt-3">
-                  Literally you probably haven't heard of them jean shorts.
+                  Literally you probably havent heard of them jean shorts.
                 </p>
               </div>
             </div>
