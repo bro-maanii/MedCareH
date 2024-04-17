@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { CalendarIcon } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 export default function Team_Cards() {
@@ -9,7 +10,7 @@ export default function Team_Cards() {
         <div className="relative group overflow-hidden rounded-lg">
           <CardContent>
             <div className="flex flex-col items-center space-y-4">
-              <img
+              <Image
                 alt="Image"
                 className="rounded-full"
                 height="200"
@@ -36,7 +37,7 @@ export default function Team_Cards() {
           </CardContent>
           <div className="absolute inset-0 flex items-center px-6 gap-4 text-sm bg-gray-900 bg-opacity-50 backdrop-blur-md translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-color">
             <p>
-              👋 Hey! I'm Jane, your Regional Paradigm Technician. How can I
+              👋 Hey I am Jane your Regional Paradigm Technician. How can I
               assist you today?
             </p>
           </div>
