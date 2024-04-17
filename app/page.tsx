@@ -65,7 +65,7 @@ const data: Iitem[] = [
 ]
 const testimonials = [
   {
-    quote: "I've been to many hospitals, but this one stands out for its compassionate approach and efficient healthcare services. Highly recommended!",
+    quote: "I have been to many hospitals, but this one stands out for its compassionate approach and efficient healthcare services. Highly recommended!",
     name: "John Doe",
   },
   {
