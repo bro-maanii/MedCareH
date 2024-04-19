@@ -1,19 +1,37 @@
 "use client";
 import React, { useState } from "react";
+import { useForm, ValidationError } from '@formspree/react';
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { SelectValue, SelectTrigger, SelectItem, SelectContent, Select, SelectGroup, SelectLabel } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
-import Notification from "./Natification";
 
 export function Appointment_Form() {
 
-  const [showNotification, setShowNotification] = useState(false);
-  const handleNoti = () => {
-    setShowNotification(!showNotification); // Show notification
-    // setTimeout(() => setShowNotification(false), 5000);
-  };
+  const [state, handleSubmit] = useForm("xpzvkdpa");
+  if (state.succeeded) {
+      return <>
+      {/* Background blur */}
+      <div
+        className="fixed inset-0 z-40 bg-black bg-opacity-50 backdrop-filter backdrop-blur-md"
+      ></div>
+
+      {/* Notification */}
+      <div className="fixed inset-0 flex justify-center items-center z-50">
+        <div className="w-full sm:w-auto max-w-sm bg-blue-500 shadow-md rounded-lg z-50 transition duration-300 ease-in-out transform translate-y-0 sm:translate-y-0 sm:scale-100">
+          <div className="p-4">
+            <h1 className=" text-white text-xl font-bold mb-2">
+              Thank you for booking an appointment
+            </h1>
+            <p className="text-white text-base font-light">We will contact you shortly. If you have any questions, please do not hesitate to contact us. If you want to more information, please contact our Med Care ChatBot. If You have emergency, please call our emergency numbers or come to our hospital. </p>
+            <p className="text-white text-base font-light">THANK YOU!</p>
+            <Button className="w-full mt-4" onClick={() => window.location.reload()}>Close</Button>
+          </div>
+        </div>
+      </div>
+    </>;
+  }
   const departments = [
     { id: 1, name: "Cardiology" },
     { id: 2, name: "Dermatology" },
@@ -45,26 +63,26 @@ export function Appointment_Form() {
         <h1 className="text-3xl font-bold">Book an Appointment</h1>
         <p className="text-gray-500 dark:text-gray-400">Fill out the form below to schedule your appointment.</p>
       </div>
-      <form className="space-y-4">
+      <form className="space-y-4" onSubmit={handleSubmit} action="https://formspree.io/f/xpzvkdpa" method="POST">
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Name</Label>
-            <Input id="name" placeholder="John Doe" />
+            <Label htmlFor="name" >Name</Label>
+            <Input id="name" type="text" name="name" placeholder="John Doe"  required/>
           </div>
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
-            <Input id="email" placeholder="john@example.com" type="email" />
+            <Input id="email" placeholder="john@example.com" type="email" name="email"/>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
             <Label htmlFor="gender">Gender</Label>
-            <Select >
+            <Select required name="gender">
               <SelectTrigger>
                 <SelectValue placeholder="Select gender" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="male">Male</SelectItem>
+              <SelectContent >
+                <SelectItem value="male" >Male</SelectItem>
                 <SelectItem value="female">Female</SelectItem>
                 <SelectItem value="other">Other</SelectItem>
               </SelectContent>
@@ -72,17 +90,17 @@ export function Appointment_Form() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="age">Age</Label>
-            <Input id="age" placeholder="Enter your age" type="number" />
+            <Input id="age" placeholder="Enter your age" type="number"  name="age"/>
           </div>
         </div>
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
             <Label htmlFor="phone">Mobile Number</Label>
-            <Input id="phone" placeholder="+1 (555) 555-5555" />
+            <Input id="phone" required placeholder="+1 (555) 555-5555" name="phone"/>
           </div>
           <div className="space-y-2">
             <Label htmlFor="department">Department</Label>
-            <Select>
+            <Select required name="department">
               <SelectTrigger>
                 <SelectValue placeholder="Select department" />
               </SelectTrigger>
@@ -99,7 +117,7 @@ export function Appointment_Form() {
         <div className="grid grid-cols-2 gap-4">
           <div className="space-y-2">
             <Label htmlFor="doctor">Doctor Name</Label>
-            <Select >
+            <Select required name="doctor">
               <SelectTrigger>
                 <SelectValue placeholder="Select doctor" />
               </SelectTrigger>
@@ -123,46 +141,19 @@ export function Appointment_Form() {
           </div>
           <div className="space-y-2">
             <Label htmlFor="date">Appointment Date</Label>
-            <Input id="date" type="date" />
+            <Input id="date" type="date" name="date"  required/>
           </div>
         </div>
         <div className="space-y-2">
           <Label htmlFor="reason">Reason for Appointment</Label>
-          <Textarea id="reason" placeholder="Enter brief reason for appointment" />
+          <Textarea id="reason" name="reason" placeholder="Enter brief reason for appointment" />
         </div>
         <div className="flex justify-center align-middle items-center">
-        <Button className="" type="button"  onClick={handleNoti} >
+        <Button className="" type="submit">
           Book Appointment
         </Button>
         </div>
       </form>
-      {
-        showNotification && (
-          <>
-          {/* Background blur */}
-          <div
-            className="fixed inset-0 z-40 bg-black bg-opacity-50 backdrop-filter backdrop-blur-md"
-            onClick={() => {
-              // Optionally, you can add a click handler to dismiss the notification
-            }}
-          ></div>
-    
-          {/* Notification */}
-          <div className="fixed inset-0 flex justify-center items-center z-50">
-            <div className="w-full sm:w-auto max-w-sm bg-blue-500 shadow-md rounded-lg z-50 transition duration-300 ease-in-out transform translate-y-0 sm:translate-y-0 sm:scale-100">
-              <div className="p-4">
-                <h1 className=" text-white text-xl font-bold mb-2">
-                  Thank you for booking an appointment
-                </h1>
-                <p className="text-white text-base font-light">We will contact you shortly. If you have any questions, please do not hesitate to contact us. If you want to more information, please contact our Med Care ChatBot. If You have emergency, please call our emergency numbers or come to our hospital. </p>
-                <p className="text-white text-base font-light">THANK YOU!</p>
-                <Button className="w-full mt-4" onClick={handleNoti}>Close</Button>
-              </div>
-            </div>
-          </div>
-        </>
-        )
-      }
     </div>
   );
 }
