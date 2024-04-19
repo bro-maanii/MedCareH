@@ -19,6 +19,13 @@
   justify-content: center;
   align-items: center;
 }
+.bg-form {
+  background-color: rgb(204, 202, 202);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+}
   @layer base {
     :root {
       --background: 0 0% 100%;

@@ -19,6 +19,7 @@ import Pricing from "./UI-Components/Pricing";
 import FancyTestimonialsSlider from "./UI-Components/TestimonialsSlider";
 import TeamSlider from "./UI-Components/Team";
 import Team_Cards from "./UI-Components/Team_Cards";
+import { Appointment_Form } from "./UI-Components/appointment_form";
 
 const data: Iitem[] = [
   {
@@ -96,7 +97,8 @@ export default function Home() {
       <FancyTestimonialsSlider testimonials={testimonials} />
     {/* Team */}
       <TeamSlider/>
-
+    {/* Appointment Form */}
+      <Appointment_Form />
     </>
   );
 }

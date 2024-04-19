@@ -32,11 +32,11 @@ export default function FancyTestimonialsSlider({ testimonials }: { testimonials
   }, [])  
 
   return (
-    <div className="w-full max-w-3xl mx-auto text-center pt-5 pb-8">
-      <h1 className='flex justify-center align-middle p-4 pb-6 text-4xl font-bold underline text-blue-700'>What Our Patients Say About Our Medical Treatments</h1>
+    <div className="w-full max-w-3xl sm:mx-auto text-center pt-5 pb-8">
+      <h1 className='flex justify-center align-middle py-4 pb-6 text-4xl font-bold underline text-blue-700'>What Our Patients Say About Our Medical Treatments</h1>
       {/* Testimonial image */}
       <div className="relative h-32">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[480px] h-[480px] pointer-events-none before:absolute before:inset-0 before:bg-gradient-to-b before:from-indigo-500/25 before:via-indigo-500/5 before:via-25% before:to-indigo-500/0 before:to-75% before:rounded-full before:-z-10">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 min-w-80  h-[480px] pointer-events-none before:absolute before:inset-0 before:bg-gradient-to-b before:from-indigo-500/25 before:via-indigo-500/5 before:via-25% before:to-indigo-500/0 before:to-75% before:rounded-full before:-z-10">
           <div className="h-32 [mask-image:_linear-gradient(0deg,transparent,theme(colors.white)_20%,theme(colors.white))]">
 
             {testimonials.map((testimonial, index) => (
