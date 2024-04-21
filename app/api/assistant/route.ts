@@ -5,7 +5,7 @@ import OpenAI from "openai";
 
 // Create an OpenAI API client (that's edge friendly!)
 const openai = new OpenAI({
-  apiKey: "sk-proj-pHiKiLS1pkDDc5F8s3h1T3BlbkFJPjhZMvrdcJgSasWUyqz2",
+  apiKey: process.env.OPENAI_KEY,
 });
 
 // IMPORTANT! Set the runtime to edge
@@ -33,7 +33,7 @@ export async function POST(req: Request) {
       // Run the assistant on the thread
       const run = await openai.beta.threads.runs.create(threadId, {
         assistant_id:
-        "asst_9aCVCpvlRjmzfLGpNF5BGhhd" ??
+        process.env.ASSISTANT_ID ??
           (() => {
             throw new Error("ASSISTANT_ID is not set");
           })(),
