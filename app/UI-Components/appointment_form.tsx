@@ -58,7 +58,7 @@ export function Appointment_Form() {
       { id: 10, name: "Dr. Paulie Walker", name2: undefined ,departments: "Psychiatry"},
   ];
   return (
-    <div className="mx-auto w-full sm:max-w-[75%] p-2 bg-form  sm:p-6 md:p-10  space-y-8">
+    <div className="w-full h-full bg-form p-4 bg-gradient-to-r from-blue-200 via-blue-100 to-blue-200">
       <div className="space-y-2 text-center">
         <h1 className="text-3xl font-bold">Book an Appointment</h1>
         <p className="text-gray-500 dark:text-gray-400">Fill out the form below to schedule your appointment.</p>

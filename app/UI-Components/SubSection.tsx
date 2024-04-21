@@ -5,7 +5,7 @@ import React from "react";
 export default function SubSection() {
   return (
     <>
-      <section className="text-gray-600 body-font bg-blue-200">
+      <section id="about" className="text-gray-600 body-font bg-blue-200">
         <div className="container px-5 mx-auto">
           <div className="flex flex-wrap -m-4">
             <div className="p-4 md:w-1/3 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:text-gray-600 duration-300">

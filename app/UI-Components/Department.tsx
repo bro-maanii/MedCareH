@@ -1,6 +1,7 @@
 import React from "react";
 import Image, { StaticImageData } from "next/image";
 
+
 export interface Iitem{
     id: number;
     name: string;
@@ -10,7 +11,7 @@ export interface Iitem{
 
 export default function Department({ props }: { props: Iitem[] }) {
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-200" id="services">
       <div className="flex flex-col justify-center items-center gap-4 pt-4 lg:pt-11">
         <h1 className="text-4xl font-bold ">Department</h1>
         <p className="text-lg lg:w-2/3">

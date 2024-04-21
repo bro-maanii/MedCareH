@@ -13,12 +13,13 @@ import 'swiper/css/navigation';
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 import Team_Cards from './Team_Cards';
+import { Idoctors } from '../api/Doctors/route';
 
-export default function Team() {
+export default function Team({props}:{props:Idoctors[]}) {
   return (
-    <>
-    <div className='flex flex-col justify-center items-center py-9 pt-16'>
-        <h1 className='text-4xl text-center font-bold'>We Have Specialist Doctors To Solve Your Problems</h1>
+    <section className="bg-white">
+    <div id='team' className='flex flex-col justify-center items-center py-9 pt-16'>
+        <h1  className='text-4xl text-center font-bold'>We Have Specialist Doctors To Solve Your Problems</h1>
         <p className='flex text-sm font-light'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat, repellendus placeat! </p>
     </div>
       <Swiper
@@ -42,17 +43,13 @@ export default function Team() {
         modules={[Pagination, Navigation,Pagination]}
         className="mySwiper pb-8"      
       >
-        <SwiperSlide><Team_Cards/></SwiperSlide>
-        <SwiperSlide><Team_Cards/></SwiperSlide>
-        <SwiperSlide><Team_Cards/></SwiperSlide>
-        <SwiperSlide><Team_Cards/></SwiperSlide>
-        <SwiperSlide><Team_Cards/></SwiperSlide>
-        <SwiperSlide><Team_Cards/></SwiperSlide>
-        <SwiperSlide><Team_Cards/></SwiperSlide>
-        <SwiperSlide><Team_Cards/></SwiperSlide>
-        <SwiperSlide><Team_Cards/></SwiperSlide>
+        {props.map((doctor) => (
+          <SwiperSlide><Team_Cards props={doctor}/></SwiperSlide>
+        ))
+        }
+        
       </Swiper>
-    </>
+    </section>
   );
 }
 

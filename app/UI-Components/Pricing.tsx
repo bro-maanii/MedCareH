@@ -5,7 +5,7 @@ import React from "react";
 export default function Pricing() {
   return (
     <>
-      <section className="text-gray-600 body-font overflow-hidden pb-8">
+      <section className="text-gray-600 body-font overflow-hidden pb-8 bg-white">
         <div className="container px-5 py-10 mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
             <h1 className="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900">

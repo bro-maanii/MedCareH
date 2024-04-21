@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Subsection1() {
   return (
-    <section className="w-full py-12 lg:py-16 xl:py-20">
+    <section className="w-full py-12 lg:py-16 xl:py-20 bg-white">
       <div className="container grid lg:grid-cols-3 xl:grid-cols-2 items-center gap-4 lg:px-6">
         <div className="grid gap-4 lg:col-span-2 xl:col-span-1 md:gap-2 lg:gap-4 items-center lg:justify-normal justify-center ">
           <div className="grid gap-2">

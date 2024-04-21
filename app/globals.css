@@ -26,6 +26,24 @@
   background-size: cover;
   
 }
+.text-lg.relative.cursor-pointer.transition-all.duration-500:before {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 4px;
+  border-radius: 9999px; /* This simulates a rounded-full effect */
+  opacity: 0;
+  transition: all 500ms;
+  background-image: linear-gradient(to right, #1e40af, #818cf8, #93c5fd); /* Adjust colors as needed */
+}
+
+.text-lg.relative.cursor-pointer.transition-all.duration-500:hover:before {
+  width: 100%;
+  opacity: 1;
+}
+
   @layer base {
     :root {
       --background: 0 0% 100%;

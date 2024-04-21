@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import logo from "../../public/logo.png";
-import { X } from "lucide-react";
+import { Bot, X } from "lucide-react";
 import Link from "next/link";
 import { Menu } from "lucide-react";
 import { useState } from "react";
@@ -19,25 +19,26 @@ const Header = () => {
       <div className=" flex lg:flex-row-reverse justify-between items-center  px-3  w-full">
         <div>
           <ul className="hidden lg:flex gap-x-9 items-center">
-            <li className=" ">
+            <li className=" text-lg relative cursor-pointer transition-all duration-500">
               <Link href="/">Home</Link>
             </li>
-            <li className="">
-              <Link href="/">About</Link>
+            <li className="text-lg relative cursor-pointer transition-all duration-500">
+              <Link href="#about">About</Link>
             </li>
-            <li className="active:font-semibold ">
-              <Link href="/">Services</Link>
+            <li className=" text-lg relative cursor-pointer transition-all duration-500">
+              <Link href="#services">Services</Link>
+            </li>
+            
+            <li className="text-lg relative cursor-pointer transition-all duration-500">
+              <Link href="#team">Doctors</Link>
+            </li>
+            <li className="text-lg relative cursor-pointer transition-all duration-500">
+              <Link href="#contact-us">Contact Us</Link>
             </li>
             <li className="">
-              <Link href="/">Deparments</Link>
-            </li>
-            <li className="">
-              <Link href="/">Doctors</Link>
-            </li>
-            <li className="">
-              <Link href="/">
-                <Button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                  All Products
+              <Link href="/MedCareBot">
+                <Button className=" bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                  <Bot className="mx-1 w-6 h-6"/>MedCareBot
                 </Button>
               </Link>
             </li>
@@ -68,28 +69,29 @@ const Header = () => {
           <div className="grid grid-cols-1 gap-4">
             <div>
               <ul className="flex flex-col justify-center items-center gap-y-8 ">
-                <li className=" ">
-                  <Link href="/">Home</Link>
-                </li>
-                <li className="">
-                  <Link href="/">About</Link>
-                </li>
-                <li className="active:font-semibold ">
-                  <Link href="/">Services</Link>
-                </li>
-                <li className="">
-                  <Link href="/">Deparments</Link>
-                </li>
-                <li className="">
-                  <Link href="/">Doctors</Link>
-                </li>
-                <li className=" " onClick={handleNav}>
-                  <Link href="/">
-                    <Button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-                      All Products
-                    </Button>
-                  </Link>
-                </li>
+              <li className=" ">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="">
+              <Link href="#about">About</Link>
+            </li>
+            <li className=" ">
+              <Link href="#services">Services</Link>
+            </li>
+            
+            <li className="">
+              <Link href="#team">Doctors</Link>
+            </li>
+            <li className="">
+              <Link href="#contact-us">Contact Us</Link>
+            </li>
+            <li className="">
+              <Link href="/MedCareBot">
+                <Button className=" bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                  <Bot className="mx-1 w-6 h-6"/>MedCareBot
+                </Button>
+              </Link>
+            </li>
               </ul>
             </div>
           </div>

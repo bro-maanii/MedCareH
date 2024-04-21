@@ -20,7 +20,11 @@ import FancyTestimonialsSlider from "./UI-Components/TestimonialsSlider";
 import TeamSlider from "./UI-Components/Team";
 import Team_Cards from "./UI-Components/Team_Cards";
 import { Appointment_Form } from "./UI-Components/appointment_form";
+import { Footer } from "./UI-Components/footer";
+import AAbc from "./UI-Components/Appointment_map";
+import Appointment_map from "./UI-Components/Appointment_map";
 
+// Deapartments 
 const data: Iitem[] = [
   {
       id: 1,
@@ -64,25 +68,25 @@ const data: Iitem[] = [
       image: psy,
   }
 ]
-const testimonials = [
-  {
-    quote: "I have been to many hospitals, but this one stands out for its compassionate approach and efficient healthcare services. Highly recommended!",
-    name: "John Doe",
-  },
-  {
-    quote: "The quality of medical care provided at this hospital is top-notch. From diagnosis to treatment, I felt like I was in capable hands throughout.",
-    name: "Sarah Johnson",
-  },
-  {
-    quote: "I'm grateful for the personalized care I received at this hospital. They took the time to understand my needs and provided tailored solutions.",
-    name: "Michael Brown",
-  }
-]
-export default function Home() {
+// Testinomials
+const getData = async () => {
+  const res = await fetch("http://localhost:3000/api/testinomials");
+  return res.json();
+};
+// specialist doctors
+const getDoctor = async () => {
+
+  const res = await fetch("http://localhost:3000/api/Doctors");
+  return res.json();
+};
+
+
+export default async function Home() {
+  const ClientSaying = await getData();
+  const Doctors = await getDoctor();
   return (
     <>
-    {/* navbar */}
-      <Navbar />
+    
     {/* Hero Section */}
       <HeroSection />
     {/* overall */}
@@ -94,11 +98,11 @@ export default function Home() {
     {/* Pricing */}
       <Pricing  />
     {/* Testimonial */}
-      <FancyTestimonialsSlider testimonials={testimonials} />
+      <FancyTestimonialsSlider testimonials={ClientSaying} />
     {/* Team */}
-      <TeamSlider/>
+      <TeamSlider props={Doctors}/>
     {/* Appointment Form */}
-      <Appointment_Form />
+      <Appointment_map />
     </>
   );
 }
