@@ -1,3 +1,6 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import { experimental_AssistantResponse } from "ai";
 import OpenAI from "openai";
 require('dotenv').config()
