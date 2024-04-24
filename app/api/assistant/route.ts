@@ -1,10 +1,10 @@
 import { experimental_AssistantResponse } from "ai";
 import OpenAI from "openai";
-// import * as dotenv from "dotenv";
-// import crypto from 'crypto';
-// dotenv.config();
+import * as dotenv from "dotenv";
+import crypto from 'crypto';
+dotenv.config();
 // Create an OpenAI API client (that's edge friendly!)
-const  openai = new OpenAI({ apiKey:"sk-proj-XuUt97L0cm2UNDH6XVNwT3BlbkFJpkT2FLn11QaCvP1TShMn"});
+const  openai = new OpenAI({ apiKey:process.env.OPENAI_API_KEY});
 
 export const runtime = "edge";
 
@@ -30,7 +30,7 @@ export async function POST(req: Request) {
       // Run the assistant on the thread
       const run = await openai.beta.threads.runs.create(threadId, {
         assistant_id:
-        "asst_9aCVCpvlRjmzfLGpNF5BGhhd"??
+        process.env.ASSISTANT_ID ??
           (() => {
             throw new Error("ASSISTANT_ID is not set");
           })(),
