@@ -1,3 +1,4 @@
+import { NextApiRequest, NextApiResponse } from "next";
 
 export interface Idoctors {
     name: string;
@@ -150,6 +151,7 @@ const doctors :Idoctors[]=[
         "education": "MBBS from Karachi Medical University"
     }
 ]
+
 
 export const GET = async () => {
     return new Response(JSON.stringify(doctors));

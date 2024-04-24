@@ -3,6 +3,8 @@ import { CalendarIcon, ClockIcon, LucidePenSquare } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { Idoctors } from "../api/Doctors/route";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Team_Cards({props}:{props:Idoctors}) {
   return (
@@ -43,11 +45,13 @@ export default function Team_Cards({props}:{props:Idoctors}) {
               </div>
             </div>
           </CardContent>
-          <div className="absolute inset-0 flex items-center px-6 gap-4 text-sm bg-gray-900 bg-opacity-50 backdrop-blur-md translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-color">
+          <div className="absolute inset-0 flex flex-col justify-center items-center px-6 gap-4 text-sm bg-gray-900 text-white translate-y-full opacity-0 duration-500 group-hover:translate-y-0 group-hover:opacity-100 transition-color">
             <p>
               👋 Hey I am {props.name} your {props.specialization} doctor. How can I
               assist you today?
             </p>
+            <Link href="#contact" >
+            <Button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">Make Appointment</Button></Link>
           </div>
         </div>
       </Card>

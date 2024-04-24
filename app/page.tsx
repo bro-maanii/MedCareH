@@ -1,5 +1,4 @@
 
-import Navbar from "./UI-Components/Navbar";
 import HeroSection from "./UI-Components/HeroSection";
 import SubSection from "./UI-Components/SubSection";
 import Subsection1 from "./UI-Components/SubSection1";
@@ -18,10 +17,6 @@ import { Iitem } from "./UI-Components/Department";
 import Pricing from "./UI-Components/Pricing";
 import FancyTestimonialsSlider from "./UI-Components/TestimonialsSlider";
 import TeamSlider from "./UI-Components/Team";
-import Team_Cards from "./UI-Components/Team_Cards";
-import { Appointment_Form } from "./UI-Components/appointment_form";
-import { Footer } from "./UI-Components/footer";
-import AAbc from "./UI-Components/Appointment_map";
 import Appointment_map from "./UI-Components/Appointment_map";
 
 // Deapartments 
@@ -86,7 +81,6 @@ export default async function Home() {
   const Doctors = await getDoctor();
   return (
     <>
-    
     {/* Hero Section */}
       <HeroSection />
     {/* overall */}
